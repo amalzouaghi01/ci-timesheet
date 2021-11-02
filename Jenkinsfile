@@ -16,6 +16,11 @@ pipeline {
                 bat "mvn -version"
                 bat "mvn clean install"
             }
+            post {
+            success {
+               jacoco()
+               }
+              } 
            
         }
        stage("Sonar") {
