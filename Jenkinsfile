@@ -33,6 +33,11 @@ pipeline {
            bat "mvn deploy -Dmaven.test.skip"
          }
        }
+       stage ('Email Notification') {
+        steps {
+         mail bcc: '', body: 'your pipeline is building', cc: '', from: '', replyTo: '', subject: 'Build', to: 'amal.zouaghi@esprit.tn'
+          }
+       }
        
        
     
